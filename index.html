@@ -22,11 +22,13 @@
     </style>
     <title>Accordion</title>
   </head>
-  <body class="grid place-content-center h-screen">
-    <section class="text-white">
+  <body
+    class="grid place-content-center h-screen bg-gradient-to-bl from-indigo-200 via-sky-300 to-blue-400"
+  >
+    <ul class="text-white shadow-2xl">
       <!-- single Accordion -->
-      <article
-        class="w-96 bg-red-500 flex items-center gap-x-3 flex-wrap group"
+      <li
+        class="w-96 bg-indigo-500 flex items-center gap-x-3 flex-wrap relative"
       >
         <!-- wrap is important here -->
         <input type="checkbox" id="faq1" class="peer appearance-none" />
@@ -38,12 +40,46 @@
         >
         <!-- note: checkbox will be triggered even if label is triggered. -->
         <div
-          class="peer-checked:inline hidden basis-full border-t-2 border-white p-3"
+          class="peer-checked:inline hidden basis-full border-y-[1px] border-white p-3"
         >
           <!-- note: basis may not work without wrap -->
           <p>My name is Sohan Emon</p>
         </div>
-      </article>
-    </section>
+      </li>
+      <li class="w-96 bg-sky-500 flex items-center gap-x-3 flex-wrap relative">
+        <!-- wrap is important here -->
+        <input type="checkbox" id="faq2" class="peer appearance-none" />
+        <i class="fa-solid fa-chevron-right peer-checked:hidden inline"></i>
+        <i class="fa-solid fa-chevron-down peer-checked:inline hidden"></i>
+        <label for="faq2" class="py-4 cursor-pointer grow">
+          <!-- note: grow is used to fill all remaining space of the article -->
+          <p>What do you do?</p></label
+        >
+        <!-- note: checkbox will be triggered even if label is triggered. -->
+        <div
+          class="peer-checked:inline hidden basis-full border-y-[1px] border-white p-3"
+        >
+          <!-- note: basis may not work without wrap -->
+          <p>I'm a fullstack web developer.</p>
+        </div>
+      </li>
+      <li class="w-96 bg-blue-500 flex items-center gap-x-3 flex-wrap relative">
+        <!-- wrap is important here -->
+        <input type="checkbox" id="faq3" class="peer appearance-none" />
+        <i class="fa-solid fa-chevron-right peer-checked:hidden inline"></i>
+        <i class="fa-solid fa-chevron-down peer-checked:inline hidden"></i>
+        <label for="faq3" class="py-4 cursor-pointer grow">
+          <!-- note: grow is used to fill all remaining space of the article -->
+          <p>What is your favorite stack?</p></label
+        >
+        <!-- note: checkbox will be triggered even if label is triggered. -->
+        <div
+          class="peer-checked:inline hidden basis-full border-y-[1px] border-white p-3"
+        >
+          <!-- note: basis may not work without wrap -->
+          <p>Next, Tailwind CSS, Node, MongoDB</p>
+        </div>
+      </li>
+    </ul>
   </body>
 </html>
