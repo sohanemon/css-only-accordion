@@ -1,8 +1,8 @@
-# css only accordion
+# tailwind css accordion
 
-> daisy ui style accordion
+> daisy ui styled accordion
 
-> with raw css only
+> with tailwind css
 
 ## live [website link](https://sohanemon.github.io/css-only-accordion)
 
