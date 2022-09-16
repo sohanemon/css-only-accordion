@@ -19,17 +19,23 @@
       * {
         font-family: "Poppins", sans-serif;
       }
+      @layer components {
+        .item {
+          @apply w-full sm:w-96 text-xs sm:text-sm flex items-center gap-x-3 flex-wrap select-none;
+        }
+        .content {
+          @apply peer-checked:max-h-max max-h-0 basis-full peer-checked:border-y-[1px] border-blue-300 peer-checked:p-3 overflow-hidden transition-all select-text;
+        }
+      }
     </style>
     <title>Accordion</title>
   </head>
   <body
-    class="grid place-content-center h-screen bg-gradient-to-bl from-indigo-200 via-sky-300 to-blue-400"
+    class="grid place-content-center h-screen bg-gradient-to-bl from-cyan-200 via-sky-300 to-blue-400"
   >
     <ul class="text-white shadow-2xl">
       <!-- single Accordion -->
-      <li
-        class="w-96 bg-indigo-500 flex items-center gap-x-3 flex-wrap relative"
-      >
+      <li class="bg-indigo-500 item">
         <!-- wrap is important here -->
         <input type="checkbox" id="faq1" class="peer appearance-none" />
         <i class="fa-solid fa-chevron-right peer-checked:hidden inline"></i>
@@ -39,14 +45,12 @@
           <p>What is your name?</p></label
         >
         <!-- note: checkbox will be triggered even if label is triggered. -->
-        <div
-          class="peer-checked:inline hidden basis-full border-y-[1px] border-white p-3"
-        >
+        <div class="content">
           <!-- note: basis may not work without wrap -->
           <p>My name is Sohan Emon</p>
         </div>
       </li>
-      <li class="w-96 bg-sky-500 flex items-center gap-x-3 flex-wrap relative">
+      <li class="bg-sky-500 item">
         <!-- wrap is important here -->
         <input type="checkbox" id="faq2" class="peer appearance-none" />
         <i class="fa-solid fa-chevron-right peer-checked:hidden inline"></i>
@@ -56,14 +60,12 @@
           <p>What do you do?</p></label
         >
         <!-- note: checkbox will be triggered even if label is triggered. -->
-        <div
-          class="peer-checked:inline hidden basis-full border-y-[1px] border-white p-3"
-        >
+        <div class="content">
           <!-- note: basis may not work without wrap -->
           <p>I'm a fullstack web developer.</p>
         </div>
       </li>
-      <li class="w-96 bg-blue-500 flex items-center gap-x-3 flex-wrap relative">
+      <li class="bg-blue-500 item">
         <!-- wrap is important here -->
         <input type="checkbox" id="faq3" class="peer appearance-none" />
         <i class="fa-solid fa-chevron-right peer-checked:hidden inline"></i>
@@ -73,11 +75,32 @@
           <p>What is your favorite stack?</p></label
         >
         <!-- note: checkbox will be triggered even if label is triggered. -->
-        <div
-          class="peer-checked:inline hidden basis-full border-y-[1px] border-white p-3"
-        >
+        <div class="content">
           <!-- note: basis may not work without wrap -->
           <p>Next, Tailwind CSS, Node, MongoDB</p>
+        </div>
+      </li>
+      <li class="bg-cyan-600 item">
+        <!-- wrap is important here -->
+        <input type="checkbox" id="faq4" class="peer appearance-none" />
+        <i class="fa-solid fa-chevron-right peer-checked:hidden inline"></i>
+        <i class="fa-solid fa-chevron-down peer-checked:inline hidden"></i>
+        <label for="faq4" class="py-4 cursor-pointer grow">
+          <!-- note: grow is used to fill all remaining space of the article -->
+          <p>Do you have a portfolio?</p></label
+        >
+        <!-- note: checkbox will be triggered even if label is triggered. -->
+        <div class="content">
+          <!-- note: basis may not work without wrap -->
+          <p>
+            Go,
+            <a
+              class="text-blue-100 hover:underline underline-offset-2"
+              target="_blank"
+              href="https://onemanse.vercel.app"
+              >there</a
+            >
+          </p>
         </div>
       </li>
     </ul>
